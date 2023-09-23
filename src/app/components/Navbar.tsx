@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <nav className="bg-slate-900 flex flex-row md:justify-between px-8 h-[10vh] items-center sticky top-0 justify-center">
+    <nav className="bg-slate-950 flex flex-row md:justify-between px-8 h-[10vh] items-center sticky top-0 justify-center z-10">
       <div className="flex flex-row gap-x-20 text-white items-center">
         <h2 className="text-4xl select-none">DTA32</h2>
         <div className="md:flex flex-row gap-x-10 text-2xl hidden">
@@ -24,10 +24,7 @@ export default function Navbar() {
           </a>
         </div>
       </div>
-      <div
-        style={{ width: "300px", backgroundColor: "white" }}
-        className="md:flex h-4/6 content-center text-black items-center hidden"
-      >
+      <div className="lg:flex h-4/6 content-center text-black items-center hidden bg-white">
         Placeholder for spotify listening activity
       </div>
     </nav>

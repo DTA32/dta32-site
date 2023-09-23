@@ -1,3 +1,3 @@
 export default function About() {
-  return <div className="min-h-[90vh] bg-slate-800" id="about"></div>;
+  return <section className="min-h-[90vh] bg-slate-900" id="about"></section>;
 }
