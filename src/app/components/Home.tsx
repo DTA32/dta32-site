@@ -13,7 +13,7 @@ export default function Home() {
       </div>
       <div className="md:col-span-4 relative max-h-[90vh]">
         <Image
-          src="/home.jpg"
+          src="/dta32-site/home.jpg"
           alt="home"
           width={1992}
           height={1992}
