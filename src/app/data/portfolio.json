@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Cash-In",
+        "description": "Aplikasi kasir berbasis Java Swing",
+        "image": "cash-in.png",
+        "repo": "https://github.com/DTA32/cash-in",
+        "publiclink": ""
+    },
+    {
+        "title": "TIKETIN",
+        "description": "Website pemesanan tiket pesawat berbasis Laravel",
+        "image": "tiketin.png",
+        "repo": "https://github.com/DTA32/airline-v1",
+        "publiclink": ""
+    },
+    {
+        "title": "RAAMEN",
+        "description": "Website manajemen kedai ramen berbasis ASP.NET",
+        "image": "raamen.png",
+        "repo": "https://github.com/MaulanaAhmadSulami/Raamen/",
+        "publiclink": ""
+    },
+    {
+        "title": "DTA32 Flash Game Site",
+        "description": "Website flash game tahun 2010an berbasis Next.js",
+        "image": "dfgs.png",
+        "repo": "https://github.com/DTA32/ofgs",
+        "publiclink": ""
+    },
+    {
+        "title": "DTA32 Personal Website",
+        "description": "Web ini.",
+        "image": "thisweb.png",
+        "repo": "https://github.com/DTA32/dta32.github.io",
+        "publiclink": "https://dta32.github.io"
+    }
+]
