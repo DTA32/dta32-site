@@ -4,27 +4,33 @@ export default function Navbar() {
       <div className="flex flex-row gap-x-20 text-white items-center">
         <h2 className="text-4xl select-none">DTA32</h2>
         <div className="md:flex flex-row gap-x-10 text-2xl hidden">
-          <a href="#home" className="hover:underline hover:underline-offset-1">
+          <a
+            href="#home"
+            className="hover:underline hover:underline-offset-2 hover:decoration-1"
+          >
             Home
           </a>
-          <a href="#about" className="hover:underline hover:underline-offset-1">
+          <a
+            href="#about"
+            className="hover:underline hover:underline-offset-2 hover:decoration-1"
+          >
             About
           </a>
           <a
             href="#portfolio"
-            className="hover:underline hover:underline-offset-1"
+            className="hover:underline hover:underline-offset-2 hover:decoration-1"
           >
             Portfolio
           </a>
           <a
             href="#contact"
-            className="hover:underline hover:underline-offset-1"
+            className="hover:underline hover:underline-offset-2 hover:decoration-1"
           >
             Contact
           </a>
         </div>
       </div>
-      <div className="lg:flex h-4/6 content-center text-black items-center hidden bg-white">
+      <div className="h-4/6 content-center text-black items-center hidden bg-white">
         Placeholder for spotify listening activity
       </div>
     </nav>

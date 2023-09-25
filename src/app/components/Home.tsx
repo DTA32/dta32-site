@@ -6,7 +6,7 @@ export default function Home() {
       className="h-[90vh] grid-rows-2 md:grid-rows-none grid md:grid-cols-9"
       id="home"
     >
-      <div className="md:col-span-5 flex flex-col justify-center px-12 bg-slate-800 max-h-[90vh]">
+      <div className="md:col-span-5 flex flex-col justify-center px-12 bg-slate-800 max-h-[90vh] text-white">
         <h2 className="text-4xl">Hi,</h2>
         <h2 className="text-4xl">Welcome to</h2>
         <h1 className="text-6xl">DTA32 Personal Website</h1>

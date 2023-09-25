@@ -1,0 +1,68 @@
+[
+    {
+        "icon": "google",
+        "platform": "Email",
+        "username": "mraditya203@gmail.com",
+        "link": "mailto:mraditya203@gmail.com"
+    },
+    {
+        "icon": "linkedin",
+        "platform": "Linkedin",
+        "username": "Muhammad Raditya",
+        "link": "https://www.linkedin.com/in/muhammad-raditya-880/"
+    },
+    {
+        "icon": "github",
+        "platform": "GitHub",
+        "username": "dta32",
+        "link": "https://github.com/DTA32"
+    },
+    {
+        "icon": "telegram",
+        "platform": "Telegram",
+        "username": "@mraditya32",
+        "link": "https://t.me/mraditya32"
+    },
+    {
+        "icon": "twitter",
+        "platform": "Twitter",
+        "username": "@mraditya32",
+        "link": "https://twitter.com/mraditya32"
+    },
+    {
+        "icon": "spotify",
+        "platform": "Spotify",
+        "username": "dta32",
+        "link": "https://open.spotify.com/user/dta32"
+    },
+    {
+        "icon": "instagram",
+        "platform": "Instagram",
+        "username": "@mraditya32",
+        "link": "https://instagram.com/mraditya32"
+    },
+    {
+        "icon": "discord",
+        "platform": "Discord",
+        "username": "DTA32",
+        "link": "https://discordapp.com/users/DTA32"
+    },
+    {
+        "icon": "",
+        "platform": "Roblox",
+        "username": "DTA_32",
+        "link": "https://www.roblox.com/user.aspx?username=dta_32"
+    },
+    {
+        "icon": "",
+        "platform": "VALORANT",
+        "username": "DTA32#ANSOS",
+        "link": ""
+    },
+    {
+        "icon": "steam",
+        "platform": "Steam",
+        "username": "DTA32",
+        "link": "https://steamcommunity.com/profiles/76561198220018161/"
+    }
+]
