@@ -59,7 +59,7 @@ jobs:
           envkey_NEXT_PUBLIC_SPOTIFY_BASIC_AUTH: ${{secrets.NEXT_PUBLIC_SPOTIFY_BASIC_AUTH}}
           envkey_NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN: ${{secrets.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN}}
           envkey_NEXT_PUBLIC_NODE_ENV: ${{secrets.NEXT_PUBLIC_NODE_ENV}}
-          filename: .env
+          file_name: .env
           directory: ./
       - name: Setup Pages
         uses: actions/configure-pages@v3
