@@ -11,7 +11,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const serverURL =
   process.env.NEXT_PUBLIC_NODE_ENV !== "production"
     ? "http://localhost:3000"
-    : "https://dta32-github-io.vercel.app/";
+    : "https://dta32.my.id";
 
 export default function Spotify() {
   const { data, error, isLoading } = useSWR(
@@ -22,10 +22,10 @@ export default function Spotify() {
     return (
       <div className="hidden lg:block h-2/3 select-none w-[360px]">
         <div className="flex flex-row px-2 h-full w-full items-center gap-x-2 animate-pulse">
-          <div className="bg-slate-700 h-10 w-10"></div>
+          <div className="bg-slate-700 h-10 w-10 rounded"></div>
           <div className="grid grid-rows-2 h-full gap-y-2">
-            <div className="bg-slate-700 h-2 w-24 rounded self-end"></div>
-            <div className="bg-slate-700 h-4 w-48 rounded"></div>
+            <div className="bg-slate-700 h-2 w-28 rounded self-end"></div>
+            <div className="bg-slate-700 h-4 w-72 rounded"></div>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function Spotify() {
           ? data.item.external_urls.spotify
           : "https://open.spotify.com/user/t56tgotgnyyhud9rkhvbabz7a"
       }
-      className="hidden lg:block h-2/3 select-none w-[360px]"
+      className="hidden lg:block h-2/3 select-none min-w-[240px] max-w-[360px]"
     >
       <div className="group relative h-full w-full">
         <div className="flex flex-row px-2 h-full w-full items-center gap-x-2 group-hover:brightness-[0.25] duration-300">
@@ -66,6 +66,7 @@ export default function Spotify() {
                 alt={`${data.item.name} album art`}
                 width={40}
                 height={40}
+                className="min-w-[40px]"
               />
             ) : (
               <FontAwesomeIcon icon={faSpotify} size="2x" color="gray" />
@@ -73,9 +74,7 @@ export default function Spotify() {
           </div>
           <div className="grid grid-rows-2 h-full">
             <p className="text-gray-300 text-xs self-end">
-              {isPlaying
-                ? "Currently listening to"
-                : "click to view my profile :3"}
+              {isPlaying ? "Currently listening to" : "visit my profile? :3"}
             </p>
             <p className="truncate w-full">
               {isPlaying
