@@ -35,7 +35,11 @@ const getNowPlaying = async () => {
 export async function GET() {
   const response = await getNowPlaying();
   if (response.error?.status) {
-    return NextResponse.json({ error: response.error });
+    return NextResponse.json({
+      error: response.error,
+      refresh_token: refreshToken,
+      basic_auth: basicAuth,
+    });
   }
   if (response.is_playing === false) {
     return NextResponse.json({ is_playing: false });
