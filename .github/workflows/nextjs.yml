@@ -24,6 +24,11 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  NEXT_PUBLIC_SPOTIFY_BASIC_AUTH: ${{secrets.NEXT_PUBLIC_SPOTIFY_BASIC_AUTH}}
+  NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN: ${{secrets.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN}}
+  NEXT_PUBLIC_NODE_ENV: ${{secrets.NEXT_PUBLIC_NODE_ENV}}
+
 jobs:
   # Build job
   build:
