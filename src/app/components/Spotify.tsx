@@ -8,10 +8,7 @@ import useSWR from "swr";
 import Image from "next/image";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
-const serverURL =
-  process.env.NEXT_PUBLIC_NODE_ENV !== "production"
-    ? "http://localhost:3000"
-    : "https://www.dta32.my.id";
+const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export default function Spotify() {
   const { data, error, isLoading } = useSWR(
