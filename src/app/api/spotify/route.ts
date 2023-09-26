@@ -35,8 +35,7 @@ const getNowPlaying = async () => {
 export async function GET() {
   const response = await getNowPlaying();
   if (response.error?.status) {
-    console.log(response.error);
-    return NextResponse.json({ error: "Error in fetching data" });
+    return NextResponse.json({ error: response.error });
   }
   if (response.is_playing === false) {
     return NextResponse.json({ is_playing: false });
