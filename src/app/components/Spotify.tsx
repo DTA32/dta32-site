@@ -11,7 +11,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const serverURL =
   process.env.NEXT_PUBLIC_NODE_ENV !== "production"
     ? "http://localhost:3000"
-    : "https://dta32.github.io";
+    : "https://dta32-github-io.vercel.app/";
 
 export default function Spotify() {
   const { data, error, isLoading } = useSWR(
