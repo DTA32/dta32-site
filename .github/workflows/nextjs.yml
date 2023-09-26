@@ -24,11 +24,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  NEXT_PUBLIC_SPOTIFY_BASIC_AUTH: ${{secrets.NEXT_PUBLIC_SPOTIFY_BASIC_AUTH}}
-  NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN: ${{secrets.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN}}
-  NEXT_PUBLIC_NODE_ENV: ${{secrets.NEXT_PUBLIC_NODE_ENV}}
-
 jobs:
   # Build job
   build:
@@ -58,6 +53,14 @@ jobs:
         with:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v2.0.2
+        with:
+          envkey_NEXT_PUBLIC_SPOTIFY_BASIC_AUTH: ${{secrets.NEXT_PUBLIC_SPOTIFY_BASIC_AUTH}}
+          envkey_NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN: ${{secrets.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN}}
+          envkey_NEXT_PUBLIC_NODE_ENV: ${{secrets.NEXT_PUBLIC_NODE_ENV}}
+          filename: .env
+          directory: ./
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
