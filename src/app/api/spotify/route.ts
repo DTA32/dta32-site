@@ -6,9 +6,9 @@ const basicAuth = process.env.NEXT_PUBLIC_SPOTIFY_BASIC_AUTH;
 const nowPlayingAPI = "https://api.spotify.com/v1/me/player/currently-playing";
 const tokenAPI = "https://accounts.spotify.com/api/token";
 
-export const fetchCache = "force-no-store";
-export const revalidate = 0;
-export const dynamic = "force-dynamic";
+// export const fetchCache = "force-no-store";
+// export const revalidate = 0;
+// export const dynamic = "force-dynamic";
 
 const getAccessToken = async () => {
   const response = await fetch(tokenAPI, {
@@ -21,7 +21,7 @@ const getAccessToken = async () => {
       grant_type: "refresh_token",
       refresh_token: refreshToken,
     }),
-    // next: { revalidate: 3600 },
+    next: { revalidate: 3600 },
   }).then((res) => res.json());
   return response;
 };
@@ -30,7 +30,7 @@ const getNowPlaying = async () => {
   const { access_token } = await getAccessToken();
   const response = await fetch(nowPlayingAPI, {
     headers: { Authorization: `Bearer ${access_token}` },
-    // next: { revalidate: 200 },
+    next: { revalidate: 200 },
     // cache: "no-cache", //
   });
   if (response.status === 204) return NextResponse.json({ is_playing: false });

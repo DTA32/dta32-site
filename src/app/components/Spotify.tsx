@@ -73,7 +73,7 @@ export default function Spotify() {
             <p className="text-gray-300 text-xs self-end">
               {isPlaying ? "Currently listening to" : "visit my profile? :3"}
             </p>
-            <p className="truncate w-full">
+            <p className="truncate w-full text-white">
               {isPlaying
                 ? `${data.item.artists[0].name} - ${data.item.name}`
                 : "Offline"}
