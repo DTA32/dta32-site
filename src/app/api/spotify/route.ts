@@ -8,7 +8,7 @@ const tokenAPI = "https://accounts.spotify.com/api/token";
 
 // export const fetchCache = "force-no-store";
 // export const revalidate = 0;
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 const getAccessToken = async () => {
   const response = await fetch(tokenAPI, {
