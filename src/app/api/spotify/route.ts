@@ -26,8 +26,8 @@ const getNowPlaying = async () => {
   const { access_token } = await getAccessToken();
   const response = await fetch(nowPlayingAPI, {
     headers: { Authorization: `Bearer ${access_token}` },
-    next: { revalidate: 200 },
-    // cache: "no-cache", // supaya bisa refresh tiap 1s (jelas increasing API calls), comment yang atas dan uncomment yang ini
+    // next: { revalidate: 200 },
+    cache: "no-cache", //
   });
   if (response.status === 204) return NextResponse.json({ is_playing: false });
   return response.json();
