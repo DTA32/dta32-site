@@ -64,6 +64,7 @@ export default function Spotify() {
                 width={40}
                 height={40}
                 className="min-w-[40px]"
+                unoptimized={true}
               />
             ) : (
               <FontAwesomeIcon icon={faSpotify} size="2x" color="gray" />
@@ -71,7 +72,7 @@ export default function Spotify() {
           </div>
           <div className="grid grid-rows-2 h-full">
             <p className="text-gray-300 text-xs self-end">
-              {isPlaying ? "Currently listening to" : "visit my profile? :3"}
+              {isPlaying ? "Currently listening to" : "check my profile? :3"}
             </p>
             <p className="truncate w-full text-white">
               {isPlaying

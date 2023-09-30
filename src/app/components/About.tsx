@@ -7,7 +7,7 @@ export default function About() {
       id="about"
     >
       <Image
-        src="/meh.jpg"
+        src="/meh.gif"
         alt="meh"
         width={480}
         height={480}

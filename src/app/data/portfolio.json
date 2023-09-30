@@ -3,35 +3,135 @@
         "title": "Cash-In",
         "description": "Aplikasi kasir berbasis Java Swing",
         "image": "cash-in.png",
-        "repo": "https://github.com/DTA32/cash-in",
-        "publiclink": ""
+        "techStack": [
+            {
+                "icon": "java",
+                "iconVar": "plain",
+                "name": "Java (Swing)"
+            },
+            {
+                "icon": "mysql",
+                "iconVar": "plain",
+                "name": "MySQL"
+            }
+        ],
+        "githubLink": "https://github.com/DTA32/cash-in",
+        "publicLink": ""
     },
     {
         "title": "TIKETIN",
         "description": "Website pemesanan tiket pesawat berbasis Laravel",
         "image": "tiketin.png",
-        "repo": "https://github.com/DTA32/airline-v1",
-        "publiclink": ""
+        "techStack": [
+            {
+                "icon": "php",
+                "iconVar": "plain",
+                "name": "PHP"
+            },
+            {
+                "icon": "laravel",
+                "iconVar": "plain",
+                "name": "Laravel"
+            },
+            {
+                "icon": "sqlite",
+                "iconVar": "plain",
+                "name": "SQLite"
+            },
+            {
+                "icon": "bootstrap",
+                "iconVar": "plain",
+                "name": "Bootstrap"
+            }
+        ],
+        "githubLink": "https://github.com/DTA32/airline-v1",
+        "publicLink": ""
     },
     {
         "title": "RAAMEN",
         "description": "Website manajemen kedai ramen berbasis ASP.NET",
         "image": "raamen.png",
-        "repo": "https://github.com/MaulanaAhmadSulami/Raamen/",
-        "publiclink": ""
+        "techStack": [
+            {
+                "icon": "csharp",
+                "iconVar": "plain",
+                "name": "C#"
+            },
+            {
+                "icon": "dot-net",
+                "iconVar": "plain",
+                "name": "ASP.NET"
+            },
+            {
+                "icon": "microsoftsqlserver",
+                "iconVar": "plain",
+                "name": "SQL Server"
+            },
+            {
+                "icon": "bootstrap",
+                "iconVar": "plain",
+                "name": "Bootstrap"
+            }
+        ],
+        "githubLink": "https://github.com/MaulanaAhmadSulami/Raamen/",
+        "publicLink": ""
     },
     {
         "title": "DTA32 Flash Game Site",
         "description": "Website flash game tahun 2010an berbasis Next.js",
         "image": "dfgs.png",
-        "repo": "https://github.com/DTA32/ofgs",
-        "publiclink": ""
+        "techStack": [
+            {
+                "icon": "nextjs",
+                "iconVar": "original",
+                "name": "Next.js"
+            },
+            {
+                "icon": "react",
+                "iconVar": "original",
+                "name": "React"
+            },
+            {
+                "icon": "mongodb",
+                "iconVar": "plain",
+                "name": "MongoDB"
+            },
+            {
+                "icon": "express",
+                "iconVar": "original",
+                "name": "Express (Node.js)"
+            },
+            {
+                "icon": "tailwindcss",
+                "iconVar": "plain",
+                "name": "Tailwind"
+            }
+        ],
+        "githubLink": "https://github.com/DTA32/ofgs",
+        "publicLink": ""
     },
     {
         "title": "DTA32 Personal Website",
         "description": "Web ini.",
         "image": "thisweb.png",
-        "repo": "https://github.com/DTA32/dta32.github.io",
-        "publiclink": "https://dta32.github.io"
+        "techStack": [
+            {
+                "icon": "nextjs",
+                "iconVar": "original",
+                "name": "Next.js"
+            },
+            {
+                "icon": "react",
+                "iconVar": "original",
+                "name": "React"
+            },
+            {
+                "icon": "tailwindcss",
+                "iconVar": "plain",
+                "name": "Tailwind"
+            }
+        ],
+        "githubLink": "https://github.com/DTA32/dta32.github.io",
+        "publicLink": "https://dta32.my.id"
     }
 ]
