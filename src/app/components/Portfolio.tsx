@@ -20,7 +20,7 @@ export default function Portfolio() {
   }
   return (
     <section
-      className="min-h-[90vh] bg-slate-800 py-12 flex flex-col gap-12 text-white"
+      className="min-h-[90vh] h-full bg-slate-800 py-12 flex flex-col gap-12 text-white"
       id="portfolio"
     >
       <h1 className="text-5xl text-center">Portfolio</h1>

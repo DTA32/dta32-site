@@ -7,7 +7,7 @@ interface PortfolioCardProps {
 
 export default function PortfolioCard(props: PortfolioCardProps) {
   return (
-    <div className="group aspect-square w-3/4 relative hover:scale-105 ease-in-out duration-300 bg-slate-900">
+    <div className="group aspect-square relative hover:scale-105 ease-in-out duration-300 bg-slate-900">
       <Image
         src={`/portfolio/${props.image}`}
         alt={`${props.title} preview`}

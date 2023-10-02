@@ -68,16 +68,32 @@ export default function Navbar() {
       {hamburger && (
         <div className="absolute md:hidden top-full left-0 w-full h-screen">
           <div className="flex flex-col text-2xl divide-y divide-slate-600 bg-slate-700 z-10 text-center">
-            <a href="#home" className="w-full py-5">
+            <a
+              href="#home"
+              className="w-full py-5"
+              onClick={() => setHamburger(false)}
+            >
               Home
             </a>
-            <a href="#about" className="w-full py-5">
+            <a
+              href="#about"
+              className="w-full py-5"
+              onClick={() => setHamburger(false)}
+            >
               About
             </a>
-            <a href="#portfolio" className="w-full py-5">
+            <a
+              href="#portfolio"
+              className="w-full py-5"
+              onClick={() => setHamburger(false)}
+            >
               Portfolio
             </a>
-            <a href="#contact" className="w-full py-5">
+            <a
+              href="#contact"
+              className="w-full py-5"
+              onClick={() => setHamburger(false)}
+            >
               Contact
             </a>
           </div>

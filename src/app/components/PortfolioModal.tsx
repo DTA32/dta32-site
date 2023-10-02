@@ -1,6 +1,6 @@
 "use client";
 import { PortfolioModalProps } from "../types/PortfolioModal";
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import Image from "next/image";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -28,8 +28,8 @@ export default function PortfolioModal(props: {
 
   return (
     <div className="relative w-full h-full z-30">
-      <div className="fixed inset-0 my-auto mx-auto z-40 w-3/4 h-[95vh] md:h-3/4 bg-slate-700 rounded-xl flex flex-col md:flex-row text-white overflow-y-auto">
-        <div className="md:hidden text-right px-4 py-2">
+      <div className="fixed inset-0 my-auto mx-auto z-40 w-full w-11/12 lg:w-3/4 h-5/6 lg:h-3/4 bg-slate-700 rounded-xl flex flex-col lg:flex-row text-white">
+        <div className="lg:hidden text-right px-4 py-2">
           <FontAwesomeIcon
             icon={faXmark}
             size="2x"
@@ -38,7 +38,7 @@ export default function PortfolioModal(props: {
             color="lightgray"
           />
         </div>
-        <div className="bg-slate-500 rounded-none md:rounded-l-xl flex place-center h-1/2 md:h-full w-full md:w-4/5">
+        <div className="bg-slate-500 rounded-none lg:rounded-l-xl flex place-center h-2/6 md:h-1/2 lg:h-full w-full lg:w-4/5">
           <Image
             src={`/portfolio/${props.data.image}`}
             alt={props.data.title}
@@ -47,26 +47,26 @@ export default function PortfolioModal(props: {
             className="object-contain h-full w-full"
           />
         </div>
-        <div className="p-8 gap-10 w-full h-full flex flex-col">
+        <div className="p-8 gap-10 w-full h-full flex flex-col overflow-y-auto">
           <div className="flex justify-between">
             <h3 className="text-4xl">{props.data.title}</h3>
             <FontAwesomeIcon
               icon={faXmark}
               size="2x"
               onClick={props.closeFunc}
-              className="cursor-pointer opacity-0 md:opacity-100"
+              className="cursor-pointer opacity-0 lg:opacity-100"
               color="lightgray"
             />
           </div>
           <div>
-            <p className="text-xl pe-12 min-h-[120px] md:min-h-[160px]">
+            <p className="text-xl me-8 min-h-[120px] lg:min-h-[160px]">
               {props.data.description}
             </p>
           </div>
           {props.data.techStack.length > 0 && (
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2 pe-6">
               <p className="text-lg">Tech Stack</p>
-              <div className="flex gap-6">
+              <div className="flex flex-wrap gap-4">
                 {props.data.techStack.map((tech) => (
                   <div
                     key={tech.icon}
