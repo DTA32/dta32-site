@@ -1,8 +1,15 @@
 [
     {
+        "id": "cash-in",
         "title": "Cash-In",
-        "description": "Aplikasi kasir berbasis Java Swing",
-        "image": "cash-in.png",
+        "description": "Aplikasi kasir sederhana yang dibuat untuk memenuhi tugas akhir mata kuliah Object Oriented Programming. Aplikasi ini ditujukan untuk usaha kecil yang membutuhkan fitur manajemen barang dan transaksi yang efisien dan sederhana dengan UI yang sederhana dan akses fitur berbasis tipe user.",
+        "image": [
+            "kasirmenu.png",
+            "spvmenu.png",
+            "adminmanagebarang.png",
+            "admintrx.png",
+            "adminuser.png"
+        ],
         "techStack": [
             {
                 "icon": "java",
@@ -19,9 +26,17 @@
         "publicLink": ""
     },
     {
+        "id": "tiketin",
         "title": "TIKETIN",
-        "description": "Website pemesanan tiket pesawat berbasis Laravel",
-        "image": "tiketin.png",
+        "description": "Website pemesanan tiket pesawat yang dibuat untuk memenuhi tugas akhir mata kuliah Software Engineering. Kelebihan dari website ini adalah user dapat memilih kursi yang diinginkan saat memesan penerbangan",
+        "image": [
+            "login.png",
+            "home.png",
+            "step1.png",
+            "step3.png",
+            "history.png",
+            "eticket.png"
+        ],
         "techStack": [
             {
                 "icon": "php",
@@ -48,9 +63,16 @@
         "publicLink": ""
     },
     {
+        "id": "raamen",
         "title": "RAAMEN",
-        "description": "Website manajemen kedai ramen berbasis ASP.NET",
-        "image": "raamen.png",
+        "description": "Website manajemen kedai ramen yang dibuat untuk memenuhi tugas akhir mata kuliah Pattern Software Design. Pada website ini admin dapat membuat laporan penjualan, staff dapat mengelola ramen dan antrian transaksi, dan user dapat memesan ramen",
+        "image": [
+            "login.png",
+            "admin1.png",
+            "admin2.png",
+            "staff.png",
+            "customer.png"
+        ],
         "techStack": [
             {
                 "icon": "csharp",
@@ -77,24 +99,27 @@
         "publicLink": ""
     },
     {
+        "id": "dfgs",
         "title": "DTA32 Flash Game Site",
-        "description": "Website flash game tahun 2010an berbasis Next.js",
-        "image": "dfgs.png",
+        "description": "Project pribadi yang dibuat untuk mempelajari seluruh tech stack dibawah. Website ini berisi kumpulan game berbasis Flash tahun 2010an favoritku, bisa langsung dimainin di web tanpa harus download emulator.",
+        "image": [
+            "dfgs.png"
+        ],
         "techStack": [
-            {
-                "icon": "nextjs",
-                "iconVar": "original",
-                "name": "Next.js"
-            },
             {
                 "icon": "react",
                 "iconVar": "original",
                 "name": "React"
             },
             {
-                "icon": "mongodb",
+                "icon": "nextjs",
+                "iconVar": "original",
+                "name": "Next.js"
+            },
+            {
+                "icon": "tailwindcss",
                 "iconVar": "plain",
-                "name": "MongoDB"
+                "name": "Tailwind"
             },
             {
                 "icon": "express",
@@ -102,28 +127,31 @@
                 "name": "Express (Node.js)"
             },
             {
-                "icon": "tailwindcss",
+                "icon": "mongodb",
                 "iconVar": "plain",
-                "name": "Tailwind"
+                "name": "MongoDB"
             }
         ],
         "githubLink": "https://github.com/DTA32/ofgs",
         "publicLink": ""
     },
     {
+        "id": "dta32-web",
         "title": "DTA32 Personal Website",
-        "description": "Web ini.",
-        "image": "thisweb.png",
+        "description": "Web ini. Masih bingung mau dibuat personal atau khusus buat portfolio.",
+        "image": [
+            "thisweb.png"
+        ],
         "techStack": [
-            {
-                "icon": "nextjs",
-                "iconVar": "original",
-                "name": "Next.js"
-            },
             {
                 "icon": "react",
                 "iconVar": "original",
                 "name": "React"
+            },
+            {
+                "icon": "nextjs",
+                "iconVar": "original",
+                "name": "Next.js"
             },
             {
                 "icon": "tailwindcss",

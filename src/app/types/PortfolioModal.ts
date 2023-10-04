@@ -5,9 +5,10 @@ export interface techStack {
 }
 
 export interface PortfolioModalProps {
+  id: string;
   title: string;
   description: string;
-  image: string;
+  image: string[];
   techStack: techStack[];
   githubLink: string;
   publicLink?: string;

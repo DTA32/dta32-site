@@ -8,9 +8,10 @@ import PortfolioModal from "./PortfolioModal";
 export default function Portfolio() {
   const [modal, setModal] = useState(false); //
   const [modalData, setModalData] = useState<PortfolioModalProps>({
-    title: "Error fetching data",
-    image: "",
-    description: "Error fetching data",
+    id: "",
+    title: "",
+    image: [],
+    description: "",
     techStack: [],
     githubLink: "",
     publicLink: "",
@@ -34,7 +35,11 @@ export default function Portfolio() {
             }}
             className="flex justify-center cursor-pointer"
           >
-            <PortfolioCard title={portfolio.title} image={portfolio.image} />
+            <PortfolioCard
+              id={portfolio.id}
+              title={portfolio.title}
+              image={portfolio.image[0]}
+            />
           </div>
         ))}
       </div>

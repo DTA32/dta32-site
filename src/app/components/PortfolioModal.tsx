@@ -1,6 +1,6 @@
 "use client";
 import { PortfolioModalProps } from "../types/PortfolioModal";
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -8,21 +8,26 @@ config.autoAddCss = false;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faLink } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation, Pagination, Keyboard } from "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/keyboard";
 
 export default function PortfolioModal(props: {
   data: PortfolioModalProps;
   closeFunc: () => void;
 }) {
   useEffect(() => {
-    document.body.style.overflowY = "hidden";
-    document.addEventListener("keydown", (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") props.closeFunc();
-    });
+    };
+    document.body.style.overflowY = "hidden";
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.body.style.overflowY = "scroll";
-      document.removeEventListener("keydown", (e) => {
-        if (e.key === "Escape") props.closeFunc();
-      });
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [props]);
 
@@ -38,14 +43,26 @@ export default function PortfolioModal(props: {
             color="lightgray"
           />
         </div>
-        <div className="bg-slate-500 rounded-none lg:rounded-l-xl flex place-center h-2/6 md:h-1/2 lg:h-full w-full lg:w-4/5">
-          <Image
-            src={`/portfolio/${props.data.image}`}
-            alt={props.data.title}
-            width={480}
-            height={480}
-            className="object-contain h-full w-full"
-          />
+        <div className="bg-neutral-700 rounded-none lg:rounded-l-xl flex place-center h-2/6 md:h-1/2 lg:h-full w-full lg:w-[45%]">
+          <Swiper
+            modules={[Navigation, Pagination, Keyboard]}
+            navigation
+            pagination={{ clickable: true }}
+            spaceBetween={5}
+            keyboard={{ enabled: true }}
+          >
+            {props.data.image.map((image) => (
+              <SwiperSlide key={image} className="only:w-[516px]">
+                <Image
+                  src={`/portfolio/${props.data.id}/${image}`}
+                  alt={props.data.title}
+                  width={480}
+                  height={480}
+                  className="object-contain w-full h-full"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
         <div className="p-8 gap-10 w-full h-full flex flex-col overflow-y-auto">
           <div className="flex justify-between">
@@ -59,14 +76,14 @@ export default function PortfolioModal(props: {
             />
           </div>
           <div>
-            <p className="text-xl me-8 min-h-[120px] lg:min-h-[160px]">
+            <p className="text-xl lg:me-8 min-h-[120px] lg:min-h-[160px]">
               {props.data.description}
             </p>
           </div>
           {props.data.techStack.length > 0 && (
-            <div className="flex flex-col gap-2 pe-6">
+            <div className="flex flex-col gap-2 lg:me-6">
               <p className="text-lg">Tech Stack</p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-x-4 gap-y-2">
                 {props.data.techStack.map((tech) => (
                   <div
                     key={tech.icon}

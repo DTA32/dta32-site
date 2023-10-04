@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <section
-      className="min-h-[90vh] bg-slate-900 flex flex-col md:flex-row items-center justify-center px-8 md:px-16 xl:px-32 gap-12 lg:gap-20"
+      className="min-h-[90vh] bg-slate-900 flex flex-col md:flex-row items-center justify-center px-8 md:px-16 xl:px-32 gap-12 lg:gap-20 py-8"
       id="about"
     >
       <Image

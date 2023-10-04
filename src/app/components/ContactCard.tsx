@@ -6,13 +6,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 library.add(fab);
 import Image from "next/image";
-
-interface ContactCardProps {
-  icon: IconName;
-  platform: string;
-  username: string;
-  link: string;
-}
+import { ContactCardProps } from "../types/ContactCard";
 
 export default function ContactCard(props: ContactCardProps) {
   const icon: JSX.Element =
