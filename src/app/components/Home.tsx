@@ -15,8 +15,8 @@ export default function Home() {
         <Image
           src="/home.jpg"
           alt="home"
-          width={1992}
-          height={1992}
+          width={1080}
+          height={1080}
           className="h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-slate-800 to-20%"></div>

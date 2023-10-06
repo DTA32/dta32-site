@@ -1,0 +1,110 @@
+{
+    "noob": [
+        {
+            "icon": "javascript",
+            "iconVar": "plain",
+            "name": "JavaScript"
+        },
+        {
+            "icon": "java",
+            "iconVar": "plain",
+            "name": "Java"
+        },
+        {
+            "icon": "mysql",
+            "iconVar": "plain",
+            "name": "SQL (MySQL & SQLite)"
+        },
+        {
+            "icon": "go",
+            "iconVar": "plain",
+            "name": "Go"
+        },
+        {
+            "icon": "dot-net",
+            "iconVar": "plain",
+            "name": "ASP.NET (C#)"
+        },
+        {
+            "icon": "mongodb",
+            "iconVar": "plain",
+            "name": "MongoDB"
+        },
+        {
+            "icon": "nextjs",
+            "iconVar": "original",
+            "name": "Next.js"
+        },
+        {
+            "icon": "express",
+            "iconVar": "original",
+            "name": "Express.js"
+        },
+        {
+            "icon": "typescript",
+            "iconVar": "plain",
+            "name": "TypeScript"
+        },
+        {
+            "icon": "git",
+            "iconVar": "plain",
+            "name": "Git"
+        }
+    ],
+    "beginner": [
+        {
+            "icon": "html5",
+            "iconVar": "plain",
+            "name": "HTML5"
+        },
+        {
+            "icon": "css3",
+            "iconVar": "plain",
+            "name": "CSS"
+        },
+        {
+            "icon": "python",
+            "iconVar": "plain",
+            "name": "Python"
+        },
+        {
+            "icon": "c",
+            "iconVar": "plain",
+            "name": "C"
+        },
+        {
+            "icon": "cplusplus",
+            "iconVar": "plain",
+            "name": "C++"
+        },
+        {
+            "icon": "bootstrap",
+            "iconVar": "plain",
+            "name": "Bootstrap"
+        },
+        {
+            "icon": "tailwindcss",
+            "iconVar": "plain",
+            "name": "Tailwind"
+        },
+        {
+            "icon": "laravel",
+            "iconVar": "plain",
+            "name": "Laravel"
+        }
+    ],
+    "intermediate": [
+        {
+            "icon": "scratch",
+            "iconVar": "internal",
+            "name": "Scratch (on 2013)"
+        }
+    ],
+    "advanced": [
+        {
+            "icon": "github",
+            "iconVar": "original",
+            "name": "GITHUB COPILOT"
+        }
+    ]
+}

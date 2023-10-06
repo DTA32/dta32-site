@@ -27,6 +27,7 @@
     "swiper": "^10.3.1",
     "swr": "^2.2.4",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "typewriter-effect": "^2.21.0"
   }
 }

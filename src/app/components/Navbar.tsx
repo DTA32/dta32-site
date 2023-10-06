@@ -66,7 +66,7 @@ export default function Navbar() {
       </div>
       <Spotify />
       {hamburger && (
-        <div className="absolute md:hidden top-full left-0 w-full h-screen">
+        <div className="absolute md:hidden top-full left-0 w-full h-screen text-white">
           <div className="flex flex-col text-2xl divide-y divide-slate-600 bg-slate-700 z-10 text-center">
             <a
               href="#home"

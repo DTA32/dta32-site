@@ -14,6 +14,7 @@ import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/keyboard";
+import TechStackPill from "./TechStackPill";
 
 export default function PortfolioModal(props: {
   data: PortfolioModalProps;
@@ -81,24 +82,10 @@ export default function PortfolioModal(props: {
             </p>
           </div>
           {props.data.techStack.length > 0 && (
-            <div className="flex flex-col gap-2 lg:me-6">
-              <p className="text-lg">Tech Stack</p>
+            <div className="flex flex-col lg:me-6">
               <div className="flex flex-wrap gap-x-4 gap-y-2">
                 {props.data.techStack.map((tech) => (
-                  <div
-                    key={tech.icon}
-                    className="px-3 py-1 border rounded-full flex flex-row gap-2 min-w-[100px] w-max max-h-[33px]"
-                  >
-                    <Image
-                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}/${tech.icon}-${tech.iconVar}.svg`}
-                      alt={`${tech.name} icon`}
-                      width={24}
-                      height={24}
-                      unoptimized={true}
-                      className="brightness-0 invert"
-                    />
-                    <span>{tech.name}</span>
-                  </div>
+                  <TechStackPill key={tech.name} data={tech} type={1} />
                 ))}
               </div>
             </div>
@@ -107,7 +94,7 @@ export default function PortfolioModal(props: {
             {props.data.githubLink && (
               <a
                 href={props.data.githubLink}
-                className="underline underline-offset-4 after:content-['_↗']"
+                className="underline underline-offset-2 hover:underline-offset-4 duration-300 after:content-['_↗']"
               >
                 <FontAwesomeIcon icon={faGithub} />
                 <span className="ps-1">Repository</span>
@@ -116,7 +103,7 @@ export default function PortfolioModal(props: {
             {props.data.publicLink && (
               <a
                 href={props.data.publicLink}
-                className="underline underline-offset-4 after:content-['_↗']"
+                className="underline underline-offset-2 hover:underline-offset-4 duration-300 after:content-['_↗']"
               >
                 <FontAwesomeIcon icon={faLink} />
                 <span className="ps-1">Public Link</span>
