@@ -19,8 +19,9 @@ export default function About() {
         <div className="text-md sm:text-lg md:text-xl flex flex-col gap-8">
           <p>
             A normal human being <small>(sometimes NPC)</small> that&apos;s also
-            tech-geek, <small>(a little)</small> melophile, and gamer. Currently
-            studying at BINUS University{" "}
+            tech-geek, <small>(a little)</small> melophile, gamer, professional
+            procrastinator, and certified anti-social. Currently studying at
+            BINUS University
             <small>(yes the photo is not on binus)</small>, majoring in Computer
             Science. Interested in web development <small>(for now)</small>, but
             also have learned about algorithms, data structures, database,

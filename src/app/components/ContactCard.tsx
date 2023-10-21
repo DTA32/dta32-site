@@ -22,7 +22,7 @@ export default function ContactCard(props: ContactCardProps) {
       />
     );
   const body: JSX.Element = (
-    <div className="grid grid-cols-4 items-center border border-slate-500 hover:bg-slate-800 aspect-[3/1] rounded-2xl">
+    <div className="grid grid-cols-4 content-center items-center border border-slate-500 hover:bg-slate-800 aspect-[3/1] rounded-2xl">
       <div className="text-center">{icon}</div>
       <div className="col-span-3">
         <p className="text-gray-300">{props.platform}</p>
