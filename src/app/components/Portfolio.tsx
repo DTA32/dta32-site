@@ -33,7 +33,7 @@ export default function Portfolio() {
               setModalData(portfolio);
               setModal(true);
             }}
-            className="flex justify-center cursor-pointer"
+            className="flex justify-center cursor-pointer aspect-square"
           >
             <PortfolioCard
               id={portfolio.id}
