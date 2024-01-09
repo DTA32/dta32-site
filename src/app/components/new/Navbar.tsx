@@ -8,11 +8,8 @@ export default function Navbar() {
       <div>
         <p className="select-none text-3xl text-center">DTA32</p>
       </div>
-      <div className="flex space-x-4 items-center">
-        <Spotify />
-        <div className="w-10 h-10 flex justify-center items-center hover:bg-gray-300/25 rounded-lg cursor-pointer">
-          <FontAwesomeIcon icon={faSun} />
-        </div>
+      <div className="w-10 h-10 flex justify-center items-center hover:bg-gray-300/25 rounded-lg cursor-pointer">
+        <FontAwesomeIcon icon={faSun} />
       </div>
     </div>
   );
