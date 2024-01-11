@@ -1,22 +1,21 @@
-import ContactItem from "./ContactItem";
+"use client";
 
-const ContactPlaceholder = () => {
-    var contact: JSX.Element[] = [];
-    for (let i = 0; i < 24; i++) {
-        contact.push(<ContactItem key={i} loading={true} />);
-    }
-    return contact;
-};
+import { Suspense } from "react";
+import ContactSkeleton from "./ContactSkeleton";
+import ContactList from "./ContactList";
+import { useContactList } from "@/app/lib/promises";
 
 export default function Contact() {
     return (
         <div className="container flex flex-col mx-auto items-center gap-8 h-full py-8 md:py-16 px-4 md:px-0">
             <div className="flex flex-col space-y-2 text-center">
                 <h1 className="text-4xl">Contact</h1>
-                <h2>and links</h2>
+                <p>and links</p>
             </div>
-            <div className="flex flex-wrap gap-x-12 gap-y-6 animate-pulse justify-center overflow-y-auto md:mx-32">
-                {ContactPlaceholder()}
+            <div className="px-16 md:px-32 w-full h-full">
+                <Suspense fallback={<ContactSkeleton />}>
+                    <ContactList promise={useContactList()} />
+                </Suspense>
             </div>
         </div>
     );
