@@ -6,25 +6,14 @@ import { contact } from "@prisma/client";
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export function useContactList() {
-    // return new Promise<contact[]>((resolve, reject) => {
-    //     axios
-    //         .get(`${serverURL}/api/contact`)
-    //         .then((res) => {
-    //             resolve(res.data);
-    //         })
-    //         .catch((err) => {
-    //             reject(err);
-    //         });
-    // });
-    return new Promise<contact[]>((resolve) => {
-        resolve([
-            {
-                id: "1",
-                username: "test",
-                platform: "",
-                icon: "",
-                link: "",
-            },
-        ]);
+    return new Promise<contact[]>((resolve, reject) => {
+        axios
+            .get(`${serverURL}/api/contact`)
+            .then((res) => {
+                resolve(res.data);
+            })
+            .catch((err) => {
+                reject(err);
+            });
     });
 }
