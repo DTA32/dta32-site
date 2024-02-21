@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { contact } from "@prisma/client";
 import Image from "next/image";
-import Link from "next/link";
 import { IconName, config, library } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
@@ -22,7 +21,7 @@ export default function ContactItem(props: ContactItemProps) {
         setNavigator(window.navigator);
     }, []);
     const icon = props.contact.icon.startsWith("data:image") ? (
-        <Image src={props.contact.icon} alt="icon" width={48} height={48} className="mx-auto min-w-[32px]" />
+        <Image src={props.contact.icon} alt="icon" width={48} height={48} className="mx-auto min-w-[32px] invert" />
     ) : (
         <FontAwesomeIcon icon={["fab", props.contact.icon as IconName]} size="3x" />
     );
@@ -34,12 +33,12 @@ export default function ContactItem(props: ContactItemProps) {
         });
     };
     const classes =
-        "cursor-pointer border border-gray-400 rounded-2xl w-28 h-28 aspect-square flex justify-center items-center hover:bg-gray-200";
+        "cursor-pointer border-[1px] border-gray-400 rounded-2xl w-20 h-20 md:w-28 md:h-28 aspect-square flex justify-center items-center hover:bg-white/30 hover:backdrop-blur-md";
     const body =
         props.contact.link.length > 0 ? (
-            <Link href={props.contact.link} className={classes}>
+            <a target="_blank" href={props.contact.link} rel="noopener noreferrer" className={classes}>
                 {icon}
-            </Link>
+            </a>
         ) : (
             <div onClick={copyUsername} className={classes}>
                 {icon}
