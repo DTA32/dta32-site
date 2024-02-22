@@ -10,7 +10,7 @@ const ContactPlaceholder = () => {
 
 export default function ContactSkeleton() {
     return (
-        <div className="container overflow-y-hidden w-full h-full grid grid-rows-3 grid-flow-col gap-x-8 gap-y-0 md:gap-y-16 md:gap-x-16 justify-start md:justify-center items-center">
+        <div className="grid grid-rows-3 grid-flow-col gap-8 md:gap-16 overflow-auto pb-4 md:pb-0">
             {ContactPlaceholder()}
         </div>
     );

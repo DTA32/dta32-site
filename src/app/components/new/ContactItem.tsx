@@ -21,7 +21,13 @@ export default function ContactItem(props: ContactItemProps) {
         setNavigator(window.navigator);
     }, []);
     const icon = props.contact.icon.startsWith("data:image") ? (
-        <Image src={props.contact.icon} alt="icon" width={48} height={48} className="mx-auto min-w-[32px] invert" />
+        <Image
+            src={props.contact.icon}
+            alt={`${props.contact.platform} icon`}
+            width={48}
+            height={48}
+            className="mx-auto min-w-[32px] invert" // invert for dark mode
+        />
     ) : (
         <FontAwesomeIcon icon={["fab", props.contact.icon as IconName]} size="3x" />
     );
@@ -33,7 +39,7 @@ export default function ContactItem(props: ContactItemProps) {
         });
     };
     const classes =
-        "cursor-pointer border-[1px] border-gray-400 rounded-2xl w-20 h-20 md:w-28 md:h-28 aspect-square flex justify-center items-center hover:bg-white/30 hover:backdrop-blur-md";
+        "cursor-pointer border-[1px] border-gray-400 rounded-2xl w-20 h-20 md:w-28 md:h-28 aspect-square flex justify-center items-center hover:bg-white/10";
     const body =
         props.contact.link.length > 0 ? (
             <a target="_blank" href={props.contact.link} rel="noopener noreferrer" className={classes}>
