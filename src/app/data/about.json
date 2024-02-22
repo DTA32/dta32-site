@@ -12,7 +12,7 @@
         },
         {
             "icon": "mysql",
-            "iconVar": "plain",
+            "iconVar": "original",
             "name": "SQL (MySQL & SQLite)"
         },
         {
@@ -32,7 +32,7 @@
         },
         {
             "icon": "nextjs",
-            "iconVar": "original",
+            "iconVar": "plain",
             "name": "Next.js"
         },
         {
@@ -84,12 +84,12 @@
         },
         {
             "icon": "tailwindcss",
-            "iconVar": "plain",
+            "iconVar": "original",
             "name": "Tailwind"
         },
         {
             "icon": "laravel",
-            "iconVar": "plain",
+            "iconVar": "original",
             "name": "Laravel"
         }
     ],
