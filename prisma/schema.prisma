@@ -7,6 +7,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model article {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  category     String
+  content      String
+  date_created DateTime @db.Date
+  image        String
+  title        String
+}
+
 model contact {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   icon     String
@@ -18,4 +27,12 @@ model contact {
 model quote {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
   content String
+}
+
+model song {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  artist   String
+  imageUrl String
+  link     String
+  title    String
 }
