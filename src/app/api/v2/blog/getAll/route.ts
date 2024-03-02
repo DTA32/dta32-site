@@ -5,6 +5,7 @@ import { ResponseTemplate } from "@/app/types/api";
 const prisma = new PrismaClient();
 
 interface Preview {
+    id: string;
     image: string;
     category: string;
     title: string;
@@ -23,6 +24,7 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<Preview[] | n
         });
         const previews = articles.map((article) => {
             return {
+                id: article.id,
                 image: article.image,
                 category: article.category,
                 title: article.title,

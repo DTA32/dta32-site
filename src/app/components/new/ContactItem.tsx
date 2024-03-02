@@ -39,7 +39,7 @@ export default function ContactItem(props: ContactItemProps) {
         });
     };
     const classes =
-        "cursor-pointer border-[1px] border-gray-400 rounded-2xl w-20 h-20 md:w-28 md:h-28 aspect-square flex justify-center items-center hover:bg-white/10";
+        "cursor-pointer border-[1px] border-gray-400 rounded-2xl w-24 h-24 aspect-square flex justify-center items-center hover:bg-white/10";
     const body =
         props.contact.link.length > 0 ? (
             <a target="_blank" href={props.contact.link} rel="noopener noreferrer" className={classes}>

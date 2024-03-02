@@ -1,10 +1,10 @@
+import { useContactList } from "@/app/lib/promises";
 import ContactItem from "./ContactItem";
-import { contact } from "@prisma/client";
 
-export default async function ContactList({ promise }: { promise: Promise<contact[]> }) {
-    const contacts = await promise;
+export default async function ContactList() {
+    const contacts = await useContactList();
     return (
-        <div className="grid grid-rows-3 grid-flow-col gap-8 md:gap-16 overflow-auto">
+        <div className="grid grid-rows-3 grid-flow-col gap-12 overflow-auto">
             {contacts.map((contact) => {
                 return <ContactItem key={contact.id} contact={contact} />;
             })}

@@ -4,7 +4,7 @@ export default function Footer() {
             <a target="_blank" href="https://mraditya.works">
                 <small>also check my portfolio web</small>
             </a>
-            <small>&copy; DTA32</small>
+            <small>&copy; 2024 DTA32</small>
         </div>
     );
 }
