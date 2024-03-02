@@ -25,6 +25,13 @@ export async function GET(
                 id: params.id,
             },
         });
+        if (article == null || !article.active) {
+            return NextResponse.json({
+                status: "error",
+                data: null,
+                message: "Article not found",
+            });
+        }
         return NextResponse.json({
             status: "success",
             data: article,

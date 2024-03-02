@@ -28,7 +28,11 @@ const fetchSpotify: () => Promise<ResponseTemplate<any[] | null>> = async () => 
 
 const fetchDatabase: () => Promise<ResponseTemplate<song[] | null>> = async () => {
     try {
-        const songs = await prisma.song.findMany();
+        const songs = await prisma.song.findMany({
+            where: {
+                active: true,
+            },
+        });
         return {
             status: "success",
             data: songs,

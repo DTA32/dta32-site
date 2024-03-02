@@ -6,7 +6,11 @@ import prisma from "@/app/api/v2/lib";
 export const dynamic = "force-dynamic";
 export async function GET(): Promise<NextResponse<ResponseTemplate<quote[] | null>>> {
     try {
-        const quotes = await prisma.quote.findMany();
+        const quotes = await prisma.quote.findMany({
+            where: {
+                active: true,
+            },
+        });
         return NextResponse.json({
             status: "success",
             data: quotes,

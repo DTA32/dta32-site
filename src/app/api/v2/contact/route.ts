@@ -6,7 +6,11 @@ import prisma from "@/app/api/v2/lib";
 export const dynamic = "force-dynamic";
 export async function GET(): Promise<NextResponse<ResponseTemplate<contact[] | null>>> {
     try {
-        const contacts = await prisma.contact.findMany();
+        const contacts = await prisma.contact.findMany({
+            where: {
+                active: true,
+            },
+        });
         return NextResponse.json({
             status: "success",
             data: contacts,

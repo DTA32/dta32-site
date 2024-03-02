@@ -15,6 +15,9 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<Preview[] | n
     // TODO: get latest tweet and append
     try {
         const articles = await prisma.article.findMany({
+            where: {
+                active: true,
+            },
             orderBy: {
                 date_created: "desc",
             },

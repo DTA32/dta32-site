@@ -9,6 +9,7 @@ datasource db {
 
 model article {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  active       Boolean
   category     String
   content      String
   date_created DateTime @db.Date
@@ -17,7 +18,8 @@ model article {
 }
 
 model contact {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  active   Boolean
   icon     String
   link     String
   platform String
@@ -25,12 +27,14 @@ model contact {
 }
 
 model quote {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  active  Boolean
   content String
 }
 
 model song {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  active   Boolean
   artist   String
   imageUrl String
   link     String
