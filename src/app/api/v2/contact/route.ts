@@ -1,8 +1,7 @@
-import { PrismaClient, contact } from "@prisma/client";
+import { contact } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { ResponseTemplate } from "@/app/types/api";
-
-const prisma = new PrismaClient();
+import prisma from "@/app/api/v2/lib";
 
 export const dynamic = "force-dynamic";
 export async function GET(): Promise<NextResponse<ResponseTemplate<contact[] | null>>> {

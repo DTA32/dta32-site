@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { ResponseTemplate } from "@/app/types/api";
 import { getAccessToken } from "../lib";
-import { PrismaClient, song } from "@prisma/client";
+import { song } from "@prisma/client";
+import prisma from "@/app/api/v2/lib";
 
 const spotifyAPI = "https://api.spotify.com/v1/me/top/tracks?limit=10&time_range=short_term";
-const prisma = new PrismaClient();
 
 const fetchSpotify: () => Promise<ResponseTemplate<any[] | null>> = async () => {
     const tokenData = await getAccessToken();

@@ -1,8 +1,6 @@
-import { PrismaClient, article } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { ResponseTemplate } from "@/app/types/api";
-
-const prisma = new PrismaClient();
+import prisma from "@/app/api/v2/lib";
 
 interface Preview {
     id: string;
