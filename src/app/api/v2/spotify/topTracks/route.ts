@@ -49,17 +49,20 @@ const fetchDatabase: () => Promise<ResponseTemplate<song[] | null>> = async () =
     }
 };
 
-interface TopTracksData {
-    favorite: boolean;
-    imageUrl: string;
-    title: string;
-    artist: string;
-    link: string;
+interface TopTracksResponse {
+    period: string;
+    tracks: {
+        rank: number;
+        imageUrl: string;
+        title: string;
+        artist: string;
+        link: string;
+    }[];
 }
 
 export const dynamic = "force-dynamic";
 
-export async function GET(): Promise<NextResponse<ResponseTemplate<TopTracksData[] | null>>> {
+export async function GET(): Promise<NextResponse<ResponseTemplate<TopTracksResponse | null>>> {
     const spotifyData = await fetchSpotify();
     if (spotifyData.status === "error")
         return NextResponse.json({ status: "error", data: null, message: spotifyData.message });
@@ -71,7 +74,7 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<TopTracksData
             ? new Array()
             : databaseData.data.map((song) => {
                   return {
-                      favorite: true,
+                      rank: 0,
                       imageUrl: song.imageUrl,
                       title: song.title,
                       artist: song.artist,
@@ -81,9 +84,9 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<TopTracksData
     const spotifySongs =
         spotifyData.data === null
             ? null
-            : spotifyData.data.map((song) => {
+            : spotifyData.data.map((song, i) => {
                   return {
-                      favorite: false,
+                      rank: i + 1,
                       imageUrl: song.album.images[0].url,
                       title: song.name,
                       artist: song.artists[0].name,
@@ -92,9 +95,14 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<TopTracksData
               });
 
     const mergedSongs = dbSongs.concat(spotifySongs);
+    const now = new Date();
+    const period = now.toLocaleString("default", { month: "long" }) + " " + now.getFullYear();
     return NextResponse.json({
         status: "success",
-        data: mergedSongs,
+        data: {
+            period: period,
+            tracks: mergedSongs,
+        },
         message: null,
     });
 }
