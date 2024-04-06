@@ -74,3 +74,23 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* proudly taken from chatgpt */
+@keyframes scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-2160px, 0, 0);
+    }
+}
+
+.spotify-bg {
+    background-image: url("/background/spotify.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    width: 6480px;
+    animation: scroll 30s linear infinite;
+}

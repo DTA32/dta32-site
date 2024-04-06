@@ -20,7 +20,7 @@ export default function Page() {
             <div id="blog" className="h-screen max-h-screen snap-center bg-zinc-200">
                 <Blog />
             </div>
-            <div id="spotify" className="h-screen max-h-screen snap-center bg-zinc-400">
+            <div id="spotify" className="h-screen max-h-screen snap-center">
                 <Spotify />
             </div>
             <div id="contact" className="h-screen max-h-screen snap-center relative">

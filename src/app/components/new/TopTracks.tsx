@@ -1,21 +1,35 @@
 import TopTracksItem from "./TopTracksItem";
+import axios from "axios";
 
-const TracksPlaceholder = () => {
-    var tracks: JSX.Element[] = [];
-    for (let i = 0; i < 10; i++) {
-        tracks.push(<TopTracksItem key={i} rank={i + 1} title={"Lorem Ipsum"} artist={"Dolor sit amet"} loading={true} />);
-    }
-    return tracks;
-};
+const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 
-export default function TopTracks() {
+function fetchTopTracks() {
+    return new Promise<any>(async (resolve, reject) => {
+        await axios
+            .get(`${serverURL}/api/v2/spotify/topTracks`)
+            .then((res) => {
+                if (res.data.status === "error") reject(new Error(res.data.message));
+                resolve(res.data.data);
+            })
+            .catch((err) => {
+                reject(new Error(err));
+            });
+    });
+}
+
+export default async function TopTracks() {
+    const data = await fetchTopTracks();
     return (
-        <div className="rounded-xl bg-gray-500 w-full h-full flex flex-col">
-            <div className="rounded-t-xl bg-gray-600 w-full flex flex-col text-center text-white p-2">
-                <h1 className="text-3xl">Top 10 tracks</h1>
-                <h2 className="text-lg">November 2023</h2>
+        <div className="rounded-xl bg-gray-500/50 w-1/2 h-full flex flex-col min-w-fit text-zinc-200 backdrop-blur-md">
+            <div className="rounded-t-xl bg-gray-600/50 w-full flex flex-col items-center p-2 backdrop-blur-md">
+                <h1 className="text-3xl">Top tracks</h1>
+                <h2 className="text-lg">{data.period}</h2>
             </div>
-            <div className="flex flex-col divide-y overflow-y-auto">{TracksPlaceholder()}</div>
+            <div className="flex flex-col divide-y overflow-y-auto">
+                {data.tracks.map((track: any, i: any) => {
+                    return <TopTracksItem key={i} data={track} />;
+                })}
+            </div>
         </div>
     );
 }
