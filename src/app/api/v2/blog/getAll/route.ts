@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { ResponseTemplate } from "@/app/types/api";
 import prisma from "@/app/api/v2/lib";
 
 interface Preview {
-    id: string;
+    slug: string;
     image: string;
     category: string;
     title: string;
@@ -11,8 +11,11 @@ interface Preview {
 }
 
 export const dynamic = "force-dynamic";
-export async function GET(): Promise<NextResponse<ResponseTemplate<Preview[] | null>>> {
+export async function GET(request: NextRequest): Promise<NextResponse<ResponseTemplate<Preview[] | null>>> {
     // TODO: get latest tweet and append
+    const limit: number = request.nextUrl.searchParams.get("limit")
+        ? parseInt(request.nextUrl.searchParams.get("limit") as string)
+        : 100;
     try {
         const articles = await prisma.article.findMany({
             where: {
@@ -21,15 +24,15 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<Preview[] | n
             orderBy: {
                 date_created: "desc",
             },
-            take: 10,
+            take: limit,
         });
         const previews = articles.map((article) => {
             return {
-                id: article.id,
+                slug: article.slug,
                 image: article.image,
                 category: article.category,
                 title: article.title,
-                description: article.content.substring(0, 100) + "...",
+                description: article.content.substring(0, 200),
             };
         });
         return NextResponse.json({

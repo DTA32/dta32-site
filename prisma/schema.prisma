@@ -14,6 +14,7 @@ model article {
   content      String
   date_created DateTime @db.Date
   image        String
+  slug         String
   title        String
 }
 

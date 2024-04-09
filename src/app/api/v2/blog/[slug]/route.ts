@@ -9,20 +9,13 @@ export async function GET(
     {
         params,
     }: {
-        params: { id: string };
+        params: { slug: string };
     }
 ): Promise<NextResponse<ResponseTemplate<article | null>>> {
-    if (params.id.length !== 24) {
-        return NextResponse.json({
-            status: "error",
-            data: null,
-            message: "Invalid article ID",
-        });
-    }
     try {
-        const article = await prisma.article.findUnique({
+        const article = await prisma.article.findFirst({
             where: {
-                id: params.id,
+                slug: params.slug,
             },
         });
         if (article == null || !article.active) {
