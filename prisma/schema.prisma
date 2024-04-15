@@ -27,6 +27,13 @@ model contact {
   username String
 }
 
+model message {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  content String
+  email   String
+  name    String
+}
+
 model quote {
   id      String  @id @default(auto()) @map("_id") @db.ObjectId
   active  Boolean
