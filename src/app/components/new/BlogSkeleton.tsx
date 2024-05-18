@@ -1,11 +1,11 @@
-type PostCardProps = {
-    loading: Boolean;
-};
-
-export default function PostCard(props: PostCardProps) {
-    if (props.loading) {
-        return (
-            <div className="w-48 h-[400px] md:h-[480px] md:w-80 rounded-md shadow-md shrink-0 flex flex-col snap-start bg-white cursor-pointer">
+const PostPlaceholder = () => {
+    var posts: JSX.Element[] = [];
+    for (let i = 0; i < 6; i++) {
+        posts.push(
+            <div
+                key={i}
+                className="w-80 h-[480px] rounded-md hover:shadow-md shrink-0 flex flex-col snap-start bg-white cursor-pointer"
+            >
                 <div className="h-1/2 w-full bg-gray-500 rounded-t-md"></div>
                 <div className="p-4 flex flex-col gap-4 animate-pulse ">
                     <div className="w-16 bg-slate-700 h-6 rounded"></div>
@@ -21,4 +21,9 @@ export default function PostCard(props: PostCardProps) {
             </div>
         );
     }
+    return posts;
+};
+
+export default function BlogSkeleton() {
+    return <>{PostPlaceholder()}</>;
 }
