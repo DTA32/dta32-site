@@ -27,6 +27,7 @@ export default function ContactItem(props: ContactItemProps) {
             width={48}
             height={48}
             className="mx-auto invert" // invert for dark mode
+            loading="lazy"
         />
     ) : (
         <FontAwesomeIcon icon={["fab", props.contact.icon as IconName]} size="3x" />

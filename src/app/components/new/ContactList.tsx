@@ -25,6 +25,8 @@ export default async function ContactList() {
             console.error(err);
             return [];
         });
+    // NOTE: temporary error handling
+    if (contacts.length === 0) return <div className="text-2xl text-center">Whoops, contacts data not found</div>;
     return (
         <div className="grid grid-rows-3 grid-flow-col gap-12 overflow-auto">
             {contacts.map((contact) => {

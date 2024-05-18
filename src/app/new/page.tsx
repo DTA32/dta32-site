@@ -13,7 +13,6 @@ export default function Page() {
     return (
         <div>
             <div id="home" className="h-screen max-h-screen snap-center">
-                <Navbar />
                 <Suusss />
                 <HomeOverlay />
             </div>

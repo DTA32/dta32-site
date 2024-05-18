@@ -1,14 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ResponseTemplate } from "@/app/types/api";
 import prisma from "@/app/api/v2/lib";
-
-interface Preview {
-    slug: string;
-    image: string;
-    category: string;
-    title: string;
-    description: string;
-}
+import { Preview } from "@/app/types/Blog";
 
 export const dynamic = "force-dynamic";
 export async function GET(request: NextRequest): Promise<NextResponse<ResponseTemplate<Preview[] | null>>> {

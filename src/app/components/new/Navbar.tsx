@@ -1,4 +1,3 @@
-import Spotify from "../Spotify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 
