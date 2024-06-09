@@ -7,7 +7,7 @@ export default function HomeOverlay() {
             <Typewriter
                 options={{
                     strings: [
-                        "Welcome to DTA32's Personal Web!",
+                        "Welcome to DTA32's Personal Site!",
                         "new version and still under construction",
                         "DTA32 was not the Impostor. ∞ Impostor remain.",
                     ],

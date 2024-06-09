@@ -5,7 +5,7 @@ export default function PortfolioCard(props: PortfolioCardProps) {
     return (
         <div className="group aspect-square relative hover:scale-105 ease-in-out duration-300 bg-slate-900">
             <Image
-                src={`/portfolio/${props.id}/${props.image}`}
+                src={`https://static.dta32.my.id/personal/portfolio/${props.id}/${props.image}`}
                 alt={`${props.title} preview`}
                 width={480}
                 height={480}

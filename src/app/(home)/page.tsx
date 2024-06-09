@@ -1,5 +1,4 @@
 import HomeOverlay from "../components/new/HomeOverlay";
-import Navbar from "../components/new/Navbar";
 import Suusss from "../components/new/Suusss";
 import Blog from "../components/new/Blog";
 import Spotify from "../components/new/Spotify";

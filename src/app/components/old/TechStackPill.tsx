@@ -6,7 +6,7 @@ export default function TechStackPill(props: { data: TechStack; type: 1 | 2 }) {
     const icon: JSX.Element =
         props.data.iconVar === "internal" ? (
             <Image
-                src={`/icon/${props.data.icon.toLowerCase()}.svg`}
+                src={`https://static.dta32.my.id/personal/icon/${props.data.icon.toLowerCase()}.svg`}
                 alt="icon"
                 width={32}
                 height={32}

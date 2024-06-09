@@ -8,7 +8,13 @@ const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 function fetchNowPlaying() {
     return new Promise<any>(async (resolve, reject) => {
         await axios
-            .get(`${serverURL}/api/v2/spotify/nowPlaying`)
+            .get(`${serverURL}/api/v2/spotify/nowPlaying`, {
+                headers: {
+                    "Cache-Control": "no-cache",
+                    Pragma: "no-cache",
+                    Expires: "0",
+                },
+            })
             .then((res) => {
                 if (res.data.status === "error") reject(new Error(res.data.message));
                 resolve(res.data.data);

@@ -14,7 +14,7 @@ export default function ContactCard(props: ContactCardProps) {
             <FontAwesomeIcon icon={["fab", props.icon]} size="2x" />
         ) : (
             <Image
-                src={`/icon/${props.platform.toLowerCase()}.svg`}
+                src={`https://static.dta32.my.id/personal/icon/${props.platform.toLowerCase()}.svg`}
                 alt="icon"
                 width={32}
                 height={32}

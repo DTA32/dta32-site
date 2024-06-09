@@ -31,7 +31,7 @@ export default function PortfolioModal(props: { data: PortfolioModalProps; close
 
     return (
         <div className="relative w-full h-full z-30">
-            <div className="fixed inset-0 my-auto mx-auto z-40 w-full w-11/12 lg:w-3/4 h-5/6 lg:h-3/4 bg-slate-700 rounded-xl flex flex-col lg:flex-row text-white">
+            <div className="fixed inset-0 my-auto mx-auto z-40 w-11/12 lg:w-3/4 h-5/6 lg:h-3/4 bg-slate-700 rounded-xl flex flex-col lg:flex-row text-white">
                 <div className="lg:hidden text-right px-4 py-2">
                     <FontAwesomeIcon
                         icon={faXmark}
@@ -52,7 +52,7 @@ export default function PortfolioModal(props: { data: PortfolioModalProps; close
                         {props.data.image.map((image) => (
                             <SwiperSlide key={image} className="only:w-[516px]">
                                 <Image
-                                    src={`/portfolio/${props.data.id}/${image}`}
+                                    src={`https://static.dta32.my.id/personal/portfolio/${props.data.id}/${image}`}
                                     alt={props.data.title}
                                     width={480}
                                     height={480}
