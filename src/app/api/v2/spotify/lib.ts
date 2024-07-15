@@ -16,7 +16,7 @@ export const getAccessToken: () => Promise<ResponseTemplate<{ token: string | nu
             grant_type: "refresh_token",
             refresh_token: refreshToken,
         }),
-        next: { revalidate: 3600 },
+        next: { revalidate: 0 },
     });
     const data = await response.json();
     if (!response.ok)

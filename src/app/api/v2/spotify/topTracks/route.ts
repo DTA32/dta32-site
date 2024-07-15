@@ -12,7 +12,7 @@ const fetchSpotify: () => Promise<ResponseTemplate<any[] | null>> = async () => 
         return { status: "error", data: null, message: "Error fetching " + tokenData.message };
     const response = await fetch(spotifyAPI, {
         headers: { Authorization: `Bearer ${tokenData.data.token}` },
-        next: { revalidate: process.env.NODE_ENV === "development" ? 0 : 43200 },
+        next: { revalidate: 0 },
     });
     const data = await response.json();
     if (!response.ok)

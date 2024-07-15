@@ -1,10 +1,11 @@
 import ContactItem from "./ContactItem";
 import axios from "axios";
 import { contact } from "@prisma/client";
+import { use } from "react";
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 
-function fetchContactList() {
+async function fetchContactList() {
     return new Promise<contact[]>(async (resolve, reject) => {
         await axios
             .get(`${serverURL}/api/v2/contact`)
@@ -18,13 +19,10 @@ function fetchContactList() {
     });
 }
 
-export default async function ContactList() {
-    const contacts = await fetchContactList()
-        .then((res) => res)
-        .catch((err) => {
-            console.error(err);
-            return [];
-        });
+const promise = fetchContactList();
+
+export default function ContactList() {
+    const contacts = use(promise);
     // NOTE: temporary error handling
     if (contacts.length === 0) return <div className="text-2xl text-center">Whoops, contacts data not found</div>;
     return (

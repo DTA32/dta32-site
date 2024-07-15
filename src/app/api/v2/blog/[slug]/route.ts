@@ -19,11 +19,14 @@ export async function GET(
             },
         });
         if (article == null || !article.active) {
-            return NextResponse.json({
-                status: "error",
-                data: null,
-                message: "Article not found",
-            });
+            return NextResponse.json(
+                {
+                    status: "error",
+                    data: null,
+                    message: "Article not found",
+                },
+                { status: 404 }
+            );
         }
         return NextResponse.json({
             status: "success",
@@ -31,12 +34,15 @@ export async function GET(
             message: null,
         });
     } catch (error: any) {
-        return NextResponse.json({
-            status: "error",
-            data: null,
-            message:
-                "Error fetching data from database" +
-                (process.env.NODE_ENV === "development" ? ": " + error.message : ""),
-        });
+        return NextResponse.json(
+            {
+                status: "error",
+                data: null,
+                message:
+                    "Error fetching data from database" +
+                    (process.env.NODE_ENV === "development" ? ": " + error.message : ""),
+            },
+            { status: 500 }
+        );
     }
 }

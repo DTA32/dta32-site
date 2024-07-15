@@ -15,7 +15,7 @@ const getNowPlaying: () => Promise<
         return { status: "error", data: { is_playing: false, rawData: null }, message: tokenData.message };
     const response = await fetch(nowPlayingAPI, {
         headers: { Authorization: `Bearer ${tokenData.data.token}` },
-        next: { revalidate: process.env.NODE_ENV === "development" ? 0 : 200 },
+        next: { revalidate: 0 },
     });
     if (response.status === 204)
         return { status: "success", data: { is_playing: false, rawData: null }, message: null };
@@ -57,6 +57,12 @@ interface PlayingData {
 
 export const dynamic = "force-dynamic";
 
+const corsRules: { [key in string]: string } = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET",
+    "Access-Control-Allow-Headers": "Content-Type",
+};
+
 export async function GET(): Promise<NextResponse<ResponseTemplate<PlayingData>>> {
     const npData = await getNowPlaying();
     if (npData.status === "error") {
@@ -67,11 +73,7 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<PlayingData>>
                 message: "Error fetching " + npData.message,
             },
             {
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "GET",
-                    "Access-Control-Allow-Headers": "Content-Type",
-                },
+                headers: corsRules,
             }
         );
     }
@@ -79,11 +81,7 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<PlayingData>>
         return NextResponse.json(
             { status: "success", data: { is_playing: false, playing_data: null }, message: null },
             {
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "GET",
-                    "Access-Control-Allow-Headers": "Content-Type",
-                },
+                headers: corsRules,
             }
         );
     }
@@ -119,11 +117,7 @@ export async function GET(): Promise<NextResponse<ResponseTemplate<PlayingData>>
             message: null,
         },
         {
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET",
-                "Access-Control-Allow-Headers": "Content-Type",
-            },
+            headers: corsRules,
         }
     );
 }

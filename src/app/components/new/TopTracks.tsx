@@ -1,9 +1,10 @@
 import TopTracksItem from "./TopTracksItem";
 import axios from "axios";
+import { use } from "react";
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 
-function fetchTopTracks() {
+async function fetchTopTracks() {
     return new Promise<any>(async (resolve, reject) => {
         await axios
             .get(`${serverURL}/api/v2/spotify/topTracks`, {
@@ -23,8 +24,10 @@ function fetchTopTracks() {
     });
 }
 
-export default async function TopTracks() {
-    const data = await fetchTopTracks();
+const promise = fetchTopTracks();
+
+export default function TopTracks() {
+    const data = use(promise);
     return (
         <div className="rounded-xl bg-gray-500/50 w-1/2 h-full flex flex-col min-w-fit text-zinc-200 backdrop-blur-md">
             <div className="rounded-t-xl bg-gray-600/50 w-full flex flex-col items-center p-2 backdrop-blur-md">

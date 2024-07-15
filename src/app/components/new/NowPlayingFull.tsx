@@ -2,10 +2,11 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
+import { use } from "react";
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 
-function fetchNowPlaying() {
+async function fetchNowPlaying() {
     return new Promise<any>(async (resolve, reject) => {
         await axios
             .get(`${serverURL}/api/v2/spotify/nowPlaying`, {
@@ -25,8 +26,10 @@ function fetchNowPlaying() {
     });
 }
 
-export default async function NowPlayingFull() {
-    const fetchedData = await fetchNowPlaying();
+const promise = fetchNowPlaying();
+
+export default function NowPlayingFull() {
+    const fetchedData = use(promise);
 
     const isOffline = fetchedData.is_playing === false && fetchedData.playing_data === null;
     const isNotTrack = fetchedData.playing_data?.type !== "track";
