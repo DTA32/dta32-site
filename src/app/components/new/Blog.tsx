@@ -11,7 +11,7 @@ export default function Blog() {
                 <h1 className="text-4xl">Blog</h1>
                 <h2 className="text-2xl">tutorial, quotes, random story, rant, etc.</h2>
             </div>
-            <div className="flex gap-12 overflow-x-auto w-full snap-x h-fit">
+            <div className="flex gap-12 overflow-x-auto w-full snap-x h-full">
                 <Suspense fallback={<BlogSkeleton />}>
                     <BlogList />
                 </Suspense>

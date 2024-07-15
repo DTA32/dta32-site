@@ -15,7 +15,7 @@ export default function Page() {
                 <Suusss />
                 <HomeOverlay />
             </div>
-            <div id="blog" className="h-screen max-h-screen snap-center bg-zinc-200">
+            <div id="blog" className="h-screen max-h-screen snap-center">
                 <Blog />
             </div>
             <div id="spotify" className="h-screen max-h-screen snap-center">

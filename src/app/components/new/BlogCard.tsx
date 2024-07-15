@@ -7,17 +7,20 @@ import { usePathname } from "next/navigation";
 export default function BlogCard(props: Preview) {
     const currentPath = usePathname();
 
+    // TODO: use props instead of pathname
     const basePath = currentPath.startsWith("/blog") ? "" : "/blog";
+
+    const imageSrc: string = props.image ? props.image : "https://static.dta32.my.id/personal/blogPlaceholder.jpg";
 
     return (
         <Link
             href={`${basePath}/${props.slug}`}
-            className="w-80 h-[480px] rounded-md hover:shadow-md shrink-0 flex flex-col snap-start bg-white"
+            className="w-80 rounded-md hover:shadow-md shrink-0 flex flex-col snap-start bg-white"
         >
             <Image
-                src={props.image}
+                src={imageSrc}
                 alt={"thumbnail for " + props.title}
-                className="h-1/3 w-full bg-gray-500 rounded-t-md"
+                className="h-1/3 w-full bg-gray-500 rounded-t-md object-cover"
                 width={320}
                 height={240}
             />

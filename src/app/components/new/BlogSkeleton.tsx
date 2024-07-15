@@ -4,7 +4,7 @@ const PostPlaceholder = () => {
         posts.push(
             <div
                 key={i}
-                className="w-80 h-[480px] rounded-md hover:shadow-md shrink-0 flex flex-col snap-start bg-white cursor-pointer"
+                className="w-80 rounded-md hover:shadow-md shrink-0 flex flex-col snap-start bg-white cursor-pointer"
             >
                 <div className="h-1/2 w-full bg-gray-500 rounded-t-md"></div>
                 <div className="p-4 flex flex-col gap-4 animate-pulse ">
