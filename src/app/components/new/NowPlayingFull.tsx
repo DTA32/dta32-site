@@ -17,11 +17,11 @@ async function fetchNowPlaying() {
                 },
             })
             .then((res) => {
-                if (res.data.status === "error") reject(new Error(res.data.message));
+                if (res.data.status === "error") reject(console.error("error!!", res));
                 resolve(res.data.data);
             })
             .catch((err) => {
-                reject(new Error(err));
+                reject(console.error("error!", err));
             });
     });
 }
