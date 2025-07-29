@@ -76,3 +76,14 @@ export async function POST(NextRequest: NextRequest): Promise<NextResponse<Respo
         }
     );
 }
+
+export async function OPTIONS() {
+    return new Response(null, {
+        status: 204,
+        headers: {
+            "Access-Control-Allow-Origin": "https://www.mraditya.my.id",
+            "Access-Control-Allow-Methods": "POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+        },
+    });
+}
