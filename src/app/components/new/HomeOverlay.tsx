@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 
 export default function HomeOverlay() {
     return (
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white z-10 text-xl w-full h-full p-4">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white z-10 text-xl w-full h-full p-4 text-center">
             <Typewriter
                 options={{
                     strings: [

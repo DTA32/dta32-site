@@ -1,12 +1,17 @@
 import HomeOverlay from "../components/new/HomeOverlay";
-import Suusss from "../components/new/Suusss";
 import Blog from "../components/new/Blog";
 import Spotify from "../components/new/Spotify";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Contact from "../components/new/Contact";
 import Footer from "../components/new/Footer";
+import dynamic from "next/dynamic";
 config.autoAddCss = false;
+
+const Suusss = dynamic(
+    () => import('@/app/components/new/Suusss'),
+    { ssr: false }
+);
 
 export default function Page() {
     return (
