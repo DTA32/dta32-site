@@ -92,5 +92,5 @@
     filter: blur(1px);
     -webkit-filter: blur(1px);
     width: 6480px;
-    animation: scroll 30s linear infinite;
+    animation: scroll 60s linear infinite;
 }

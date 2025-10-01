@@ -96,7 +96,7 @@ export default function NowPlayingFull() {
                     />
                 </a>
             </div>
-            <div className="flex flex-col justify-center w-11/12 h-full self-center items-center">
+            <div className="flex flex-col justify-center w-full max-w-3xl h-full self-center items-center">
                 <div className="flex flex-col gap-6 justify-center p-8 rounded-xl bg-gray-500/50 text-zinc-200 backdrop-blur-md w-fit">
                     <h3
                         title={fetchedData.playing_data ? `Last updated ${lastUpdated}` : "Offline"}
@@ -104,7 +104,7 @@ export default function NowPlayingFull() {
                     >
                         Now Playing
                     </h3>
-                    <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <div className="flex flex-col md:flex-row justify-center md:items-center gap-8">
                         {vinyl}
                         {details}
                     </div>
