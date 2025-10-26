@@ -1,22 +1,36 @@
-import { NextRequest, NextResponse } from "next/server";
-import { ResponseTemplate } from "@/app/types/api";
+import {NextRequest, NextResponse} from "next/server";
+import {ResponseTemplate} from "@/app/types/api";
 import prisma from "@/app/api/v2/lib";
-import { Preview } from "@/app/types/Blog";
+import {Preview} from "@/app/types/Blog";
 
 export const dynamic = "force-dynamic";
+
 export async function GET(request: NextRequest): Promise<NextResponse<ResponseTemplate<Preview[] | null>>> {
     // TODO: get latest tweet and append
+    const page: number = request.nextUrl.searchParams.get("page")
+        ? parseInt(request.nextUrl.searchParams.get("page") as string)
+        : 1;
     const limit: number = request.nextUrl.searchParams.get("limit")
         ? parseInt(request.nextUrl.searchParams.get("limit") as string)
-        : 100;
+        : 8;
+    const category: string | null = request.nextUrl.searchParams.get("category")
+        ? (request.nextUrl.searchParams.get("category") as string)
+        : null;
     try {
         const articles = await prisma.article.findMany({
             where: {
                 active: true,
+                ...(category && {
+                    category: {
+                        equals: category,
+                        mode: "insensitive",
+                    }
+                }),
             },
             orderBy: {
                 date_created: "desc",
             },
+            skip: (page - 1) * limit,
             take: limit,
         });
         const previews = articles.map((article) => {

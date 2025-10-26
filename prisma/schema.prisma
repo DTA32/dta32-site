@@ -48,3 +48,9 @@ model song {
   link     String
   title    String
 }
+
+model blog_category {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+}
