@@ -56,7 +56,7 @@ export default function ContactItem(props: ContactItemProps) {
             <Tooltip>
                 <TooltipTrigger asChild>{body}</TooltipTrigger>
                 <TooltipContent>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col h-24 w-24">
                         <p className="text-center text-lg">{props.contact.platform}</p>
                         <p className="text-center text-gray-500">{props.contact.username}</p>
                     </div>

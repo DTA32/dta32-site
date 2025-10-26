@@ -20,13 +20,13 @@ export default function Page() {
                 <Suusss />
                 <HomeOverlay />
             </div>
-            <div id="blog" className="h-screen max-h-screen snap-center">
+            <div id="blog" className="min-h-screen snap-center">
                 <Blog />
             </div>
             <div id="spotify" className="h-screen max-h-screen snap-center">
                 <Spotify />
             </div>
-            <div id="contact" className="h-screen max-h-screen snap-center relative">
+            <div id="contact" className="min-h-screen snap-center relative">
                 <Contact />
                 <div className="absolute bottom-0 left-0 w-full h-8 text-white/50">
                     <Footer />

@@ -23,7 +23,7 @@ export default function QuotesGraffiti() {
     const articles = use(promise);
     if (articles.length === 0) return <></>;
     return (
-        <div className={`${comicNeue.className} absolute inset-0 z-0 top-0 left-0 opacity-30 blur-[1px] flex flex-col select-none pointer-events-none w-full h-full break-words md:text-lg`}>
+        <div className={`${comicNeue.className} absolute inset-0 z-0 top-0 left-0 opacity-30 blur-[1px] flex flex-col select-none pointer-events-none w-full overflow-clip h-full break-words md:text-lg`}>
             {
                 articles.map((quote, index) => (
                     <p

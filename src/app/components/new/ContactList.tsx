@@ -26,7 +26,7 @@ export default function ContactList() {
     // NOTE: temporary error handling
     if (contacts.length === 0) return <div className="text-2xl text-center">Whoops, contacts data not found</div>;
     return (
-        <div className="grid grid-rows-3 grid-flow-col gap-12 overflow-auto">
+        <div className="flex flex-wrap max-w-xl justify-center gap-12">
             {contacts.map((contact) => {
                 return <ContactItem key={contact.id} contact={contact} />;
             })}
