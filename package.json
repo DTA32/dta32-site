@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -14,6 +17,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@opennextjs/cloudflare": "^1.14.8",
     "@prisma/client": "^5.8.0",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
@@ -30,12 +34,12 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "eslint": "8.50.0",
-    "eslint-config-next": "13.5.2",
+    "eslint-config-next": "^14.2.35",
     "lucide-react": "^0.309.0",
-    "next": "13.5.2",
+    "next": "^14.2.35",
     "postcss": "8.4.30",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18",
+    "react-dom": "18",
     "react-markdown": "^9.0.1",
     "swiper": "^10.3.1",
     "swr": "^2.2.4",
@@ -48,6 +52,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
-    "prisma": "^5.8.0"
+    "prisma": "^5.8.0",
+    "wrangler": "^4.58.0"
   }
 }
