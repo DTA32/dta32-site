@@ -8,7 +8,7 @@ const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 async function fetchArticles() {
     return new Promise<Preview[]>(async (resolve, reject) => {
         await axios
-            .get(`${serverURL}/api/v2/blog/getAll`)
+            .get(`${serverURL}/api/v2/blog/get`)
             .then((res) => {
                 if (res.data.status === "error") reject(new Error(res.data.message));
                 resolve(res.data.data);
