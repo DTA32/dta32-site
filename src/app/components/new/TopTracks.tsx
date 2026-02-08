@@ -7,7 +7,7 @@ const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
 async function fetchTopTracks() {
     return new Promise<any>(async (resolve, reject) => {
         await axios
-            .get(`${serverURL}/api/v2/spotify/topTracks`, {
+            .get(`${serverURL}/api/v2/music/topTracks`, {
                 headers: {
                     "Cache-Control": "no-cache",
                     Pragma: "no-cache",

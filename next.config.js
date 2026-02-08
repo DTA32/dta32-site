@@ -17,6 +17,11 @@ const nextConfig = {
                 hostname: "static.dta32.my.id",
                 pathname: "/**",
             },
+            {
+                protocol: "https",
+                hostname: "lastfm.freetls.fastly.net",
+                pathname: "/**",
+            }
         ],
     },
 };
