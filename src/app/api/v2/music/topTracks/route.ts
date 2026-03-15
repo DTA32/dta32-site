@@ -4,7 +4,7 @@ import {getTopTracksDatabase} from "@/app/api/v2/lib";
 import {getTopTracks} from "@/app/api/v2/lastfm";
 import {TopTracksResponse} from "@/app/types/api";
 
-export const revalidate = 86400;
+export const revalidate = 0;
 
 const corsRules: { [key in string]: string } = {
     "Access-Control-Allow-Origin": "*",
