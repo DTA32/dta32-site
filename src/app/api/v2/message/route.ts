@@ -5,7 +5,7 @@ import prisma from "@/app/api/v2/lib";
 export const dynamic = "force-dynamic";
 export async function POST(NextRequest: NextRequest): Promise<NextResponse<ResponseTemplate<null>>> {
     const corsHeaders = {
-        "Access-Control-Allow-Origin": "https://www.mraditya.my.id",
+        "Access-Control-Allow-Origin": "https://mraditya.my.id",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type",
     };
@@ -81,7 +81,7 @@ export async function OPTIONS() {
     return new Response(null, {
         status: 204,
         headers: {
-            "Access-Control-Allow-Origin": "https://www.mraditya.my.id",
+            "Access-Control-Allow-Origin": "https://mraditya.my.id",
             "Access-Control-Allow-Methods": "POST, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type",
         },
